@@ -1,6 +1,8 @@
 package com.yxy.cache.mapper;
 
+import com.yxy.cache.bean.Department;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @author yuxiangying
@@ -10,4 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface DepartmentMapper {
+    @Select("SELECT * FROM department where id=#{id}")
+    public Department getDeptById(Integer id);
 }

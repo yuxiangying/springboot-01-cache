@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.*;
 import org.springframework.stereotype.Service;
 
-@CacheConfig(cacheNames = "emp")//抽取缓存的公共配置
+@CacheConfig(cacheNames = "emp"/*,cacheManager = "employeeCacheManager"*/)//抽取缓存的公共配置
 @Service
 public class EmployeeService {
 
@@ -30,7 +30,7 @@ public class EmployeeService {
      * org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration
      * org.springframework.boot.autoconfigure.cache.CaffeineCacheConfiguration
      * org.springframework.boot.autoconfigure.cache.GuavaCacheConfiguration
-     *org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration
+     *org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration【默认】
      * org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration
      * 3、那个配置类默认生效：SimpleCacheConfiguration
      * 4、给容器中注册了一个CacheManager：ConcurrentMapCacheManager
